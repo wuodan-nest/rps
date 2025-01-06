@@ -1,11 +1,30 @@
 // js file for rps
 
+//declaring variables
 const buttonRock = document.getElementById("rock");
 buttonRock.textContent = "Rock";
 const buttonPaper = document.getElementById("paper");
 buttonPaper.textContent = "Paper";
 const buttonScissors = document.getElementById("scissors");
 buttonScissors.textContent = "Scissors";
+
+const scoreBoard = document.querySelector(".scoreBoard");
+const humanScore = document.createElement("h2");
+let humanBase = 0;
+humanScore.textContent = "Player: " + humanBase;
+const aiScore = document.createElement("h2");
+let aiBase = 0;
+aiScore.textContent = "Computer: " + aiBase;
+const declaration = document.createElement("h2");
+declaration.textContent = "Let the game begin!";
+scoreBoard.append(humanScore);
+scoreBoard.append(aiScore);
+scoreBoard.append(declaration);
+
+//styling
+humanScore.setAttribute("style", "display : flex; direction : row");
+aiScore.setAttribute("style", "display : flex; direction : column");
+scoreBoard.setAttribute("style", "display : flex; direction : row; gap : 48px");
 
 // event listeners
 buttonRock.addEventListener("click", () => {
@@ -53,20 +72,21 @@ function compareInput(ai, hum) {
 
 // play a round
 function game() {
-    let aiSc = 0;
-    let humSc = 0;
     
     ai = aiChoice();
     hum = humChoice;
     result = compareInput(ai, hum);
     if (result.includes("HUMAN WINS")) {
-	humSc++;
+	humanBase++;
 	} else if (result.includes("AI WINS")) {
-	aiSc++;
+	aiBase++;
 	}
     console.log(result);
-    console.log("AI Score: " + aiSc);
-    console.log("Hum Score: " + humSc);
+    aiScore.textContent = "Computer: " + aiBase;
+    console.log("AI Score: " + aiBase);
+    humanScore.textContent = "Player: " + humanBase;
+    console.log("Hum Score: " + humanBase);
+    declaration.textContent = result;
 }
 
 // play one round //

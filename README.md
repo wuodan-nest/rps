@@ -11,15 +11,18 @@ Always review and understand the code before executing it.
 
 **Version History:**
 
+* **2.1.1:** WORKING!!!! on game loop to check for first to 5 to declare winner.
+* **2.1.0:** Added game ui. Linked Buttons to game logic. Linked scoreboard with game logic to keep count.
 * **1.9.0:** Finished the base logic in js.
 * **1.8.4:** Added game loop with round logic.
 * ...
 
 **Project TO-DO:**
 
-1. UI animations
-2. secondary game logic to mutate a unique mechanics
-3. ...
+1. UI animations - can try adding gifs or lottie
+2. secondary game logic to mutate a unique mechanics - big scope
+3. Could add random button for human player as well - just for fun
+4. need to add result board for game with game winner declaration
 
    
 **Contributing:**
